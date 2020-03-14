@@ -1,0 +1,10 @@
+{
+  "mongodb": {
+    "url": "mongodb+srv://enter_your_mongodb_URL_here",
+    "database": "cv"
+  },
+  "other": {
+    "chromedriver_binary": "./bin/chromedriver.exe",
+    "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/"
+  }
+}
