@@ -70,8 +70,15 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
     "database": "<your_database_name>"
   },
   "other": {
-    "chromedriver_binary": "<path_to_chromedriver_exe>",
-    "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/"
+    "chromedriver_binary": "<path_to_chromedriver_binary>",
+    "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/",
+    "dashboard_url": "<analytics_dasboard_url>"
+  },
+  "smtp": {
+    "user": "<your_email_address>",
+    "password": "<your_email_password>",
+    "email_from": "<from_email_address>",
+    "email_to": "<to_email_address>"
   }
 }
 ```

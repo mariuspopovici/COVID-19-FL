@@ -159,7 +159,7 @@ class Coronavirus():
             msg
         )
 
-        print('Hey Email has been sent!')
+        print('Sent email notification')
         server.quit()
 
 bot = Coronavirus()
