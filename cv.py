@@ -2,13 +2,29 @@ from selenium import webdriver
 from pymongo import MongoClient
 import json
 import re
+from os import path, environ
 from datetime import datetime
 
 class Coronavirus():
+    # constructor
     def __init__(self):
-        with open('config.json') as config_file:
-            self.config = json.load(config_file)
+        # read config, if config.json file is not available then try OS environment vars
+        if path.exists('config.json'):
+            with open('config.json') as config_file:
+                self.config = json.load(config_file)
+        else:
+            self.config = {
+                "mongodb": {
+                    "url": environ.get("DATABASE_URL"),
+                    "database": environ.get("DATABASE_NAME")
+                },
+                "other": {
+                    "chromedriver_binary": environ.get("CHROMEDRIVER_PATH"),
+                    "data_url": environ.get("DATA_URL")
+                }
+            }
 
+        # set up chromedriver options
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
@@ -19,6 +35,8 @@ class Coronavirus():
 
         self.client = MongoClient(self.config["mongodb"]["url"])
         self.db = self.client.get_database(self.config["mongodb"]["database"])
+
+    # scrape source data from FLDOH
     def get_data(self):
         try:
             self.driver.get(self.config["other"]["data_url"])
@@ -47,6 +65,7 @@ class Coronavirus():
             print(str(e))
             self.driver.quit()
     
+    # store case data to Atlas/MongoDB instance
     def store_data(self, cases):        
         records = self.db.florida
         cursor = records.aggregate([
