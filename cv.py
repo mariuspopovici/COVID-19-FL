@@ -59,19 +59,37 @@ class Coronavirus():
         ])
         
         result = list(cursor)
+
         max_case_number = 0 
         
         if len(result) > 0:
             max_case_number = result[0]['max_case']
         
         new_cases = list(filter(lambda item: item['case_number'] > max_case_number, cases))        
-        
+
+        inv_cursor = records.find({"travel": "Under Investigation"}, {"case_number": 1})
+        under_investigation = list(map(lambda item: item['case_number'], list(inv_cursor)))
+
+        update_cases = list(filter(lambda item: item['case_number'] in under_investigation, cases))
+
         print("Found {} new cases.".format(len(new_cases)))
+        print("Found {} cases under investigation.".format(len(under_investigation)))
 
         if len(new_cases) > 0:
             try:
-                print("Updating database.")
+                print("Adding new cases to database.")
                 self.db.florida.insert_many(new_cases)    
+            except Exception as e:
+                print(str(e))
+        
+        if len(update_cases) > 0:
+            try:
+                print("Updating under investigation cases.")
+                for case in update_cases:
+                    self.db.florida.update_one(
+                        {"case_number": case['case_number']}, 
+                        {"$set": {"travel": case['travel']}},
+                        upsert=False)
             except Exception as e:
                 print(str(e))
 
