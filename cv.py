@@ -4,6 +4,7 @@ import json
 import re
 from os import path, environ
 from datetime import datetime
+import smtplib
 
 class Coronavirus():
     # constructor
@@ -20,7 +21,14 @@ class Coronavirus():
                 },
                 "other": {
                     "chromedriver_binary": environ.get("CHROMEDRIVER_PATH"),
-                    "data_url": environ.get("DATA_URL")
+                    "data_url": environ.get("DATA_URL"),
+                    "dashboard_url": environ.get("DASHBOARD_URL")
+                },
+                "smtp": {
+                    "user": environ.get("SMTP_USER"),
+                    "password": environ.get("SMTP_PASSWORD"),
+                    "email_from": environ.get("EMAIL_FROM"),
+                    "email_to": environ.get("EMAIL_TO"),
                 }
             }
 
@@ -57,13 +65,23 @@ class Coronavirus():
                     cases.append(case)
                 row_num+=1
 
-            self.store_data(cases)
+            store_result = self.store_data(cases)
             self.driver.close()
             self.client.close()
 
         except Exception as e:
             print(str(e))
             self.driver.quit()
+            return {
+                "success": False,
+                "message": str(e)
+            }
+        
+        return {
+            "success": True,
+            "message": "{} new cases and {} cases under investigation".format(store_result['new_cases'], 
+                store_result['under_investigation'])
+        }
     
     # store case data to Atlas/MongoDB instance
     def store_data(self, cases):        
@@ -94,23 +112,58 @@ class Coronavirus():
         print("Found {} new cases.".format(len(new_cases)))
         print("Found {} cases under investigation.".format(len(under_investigation)))
 
-        if len(new_cases) > 0:
-            try:
+        
+        try:
+            if len(new_cases) > 0:
                 print("Adding new cases to database.")
                 self.db.florida.insert_many(new_cases)    
-            except Exception as e:
-                print(str(e))
-        
-        if len(update_cases) > 0:
-            try:
+            if len(update_cases) > 0:
                 print("Updating under investigation cases.")
                 for case in update_cases:
                     self.db.florida.update_one(
                         {"case_number": case['case_number']}, 
                         {"$set": {"travel": case['travel']}},
-                        upsert=False)
-            except Exception as e:
-                print(str(e))
+                        upsert=False)        
+        except Exception as e:
+            print(str(e))
+            return {
+                "success": False,
+                "message": str(e)
+            }
+        
+        return {
+            "success": True,
+            "message": "",
+            "new_cases": len(new_cases),
+            "under_investigation": len(update_cases)
+        }
+    
+    # sends email notification with the specified message and analytics dashboard URL
+    def send_mail(self, message):
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+
+        server.login(self.config["smtp"]["user"], self.config["smtp"]["password"])
+
+        subject = 'Florida COVID-19 Status'
+        dashboard_url = self.config["other"]["dashboard_url"]
+        body = f"{message}\nCheck out the analytics dashboard: {dashboard_url}"
+
+        msg = f"Subject: {subject}\n\n{body}"
+
+        server.sendmail(
+            self.config["smtp"]["email_from"],
+            self.config["smtp"]["email_to"],
+            msg
+        )
+
+        print('Hey Email has been sent!')
+        server.quit()
 
 bot = Coronavirus()
-bot.get_data()
+result = bot.get_data()
+
+if result['success']:
+    bot.send_mail(result['message'])
