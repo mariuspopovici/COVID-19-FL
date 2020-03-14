@@ -20,7 +20,7 @@ cd COVID-19-FL
 ```
 
 ## Prerequisites
-
+Download and install [Google Chrome](https://www.google.com/chrome/) if you don't have it installed already.
 You need Python3 installed on your machine. You also need the Python package management tool **pip** installed. This should come with Python3 and be installed by default.
 
 ## ChromeDriver

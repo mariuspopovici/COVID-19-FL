@@ -8,7 +8,15 @@ class Coronavirus():
     def __init__(self):
         with open('config.json') as config_file:
             self.config = json.load(config_file)
-        self.driver = webdriver.Chrome(self.config["other"]["chromedriver_binary"])
+
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+
+        self.driver = webdriver.Chrome(self.config["other"]["chromedriver_binary"], options=chrome_options)
+
         self.client = MongoClient(self.config["mongodb"]["url"])
         self.db = self.client.get_database(self.config["mongodb"]["database"])
     def get_data(self):
