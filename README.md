@@ -66,11 +66,11 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
 ```
 {
   "mongodb": {
-    "url": "mongodb+srv://your_mongodb_url",
-    "database": "your_database_name"
+    "url": "mongodb+srv://<your_mongodb_url>",
+    "database": "<your_database_name>"
   },
   "other": {
-    "chromedriver_binary": "./bin/chromedriver.exe",
+    "chromedriver_binary": "<path_to_chromedriver_exe>",
     "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/"
   }
 }
