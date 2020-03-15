@@ -57,7 +57,7 @@ class Coronavirus():
                     case = {
                         "case_number": int(re.sub("[^0-9]", "", cells[0].text)),
                         "county": cells[1].text,
-                        "age": int(cells[2].text),
+                        "age": int(re.sub("[^0-9]", "", cells[2].text)) if cells[2].text.strip() else 'Unknown',
                         "sex": cells[3].text,
                         "travel": cells[4].text,
                         "date_added": datetime.now()
