@@ -293,8 +293,8 @@
     ]
   }
 },{
-  "county": "Miami-Dade",
-  "location": {
+  "county": "Dade",
+  "location": { 
     "type": "Point",
     "coordinates": [-80.6327,25.5516
     ]
