@@ -39,8 +39,10 @@ class Coronavirus():
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
 
+        # set up selenium chrome driver
         self.driver = webdriver.Chrome(self.config["other"]["chromedriver_binary"], options=chrome_options)
 
+        # connect to MongoDB/Atlas
         self.client = MongoClient(self.config["mongodb"]["url"])
         self.db = self.client.get_database(self.config["mongodb"]["database"])
 
@@ -49,6 +51,7 @@ class Coronavirus():
         try:
             self.driver.get(self.config["other"]["data_url"])
             table = self.driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div[2]/div[3]/div/div[2]/block/table')
+            # build a collection of cases (dictionaries)
             row_num = 0
             cases = []
             for row in table.find_elements_by_css_selector('tr'):
@@ -65,6 +68,7 @@ class Coronavirus():
                     cases.append(case)
                 row_num+=1
 
+            # store to database
             store_result = self.store_data(cases)
             self.driver.close()
             self.client.close()
@@ -102,17 +106,19 @@ class Coronavirus():
         if len(result) > 0:
             max_case_number = result[0]['max_case']
         
+        # filter for new cases (case # > last case number added)
         new_cases = list(filter(lambda item: item['case_number'] > max_case_number, cases))        
 
+        # we'll refresh under investigation cases in case status changed
         inv_cursor = records.find({"travel": "Under Investigation"}, {"case_number": 1})
         under_investigation = list(map(lambda item: item['case_number'], list(inv_cursor)))
-
+        
+        # filter for cases that need updating (under investigation)
         update_cases = list(filter(lambda item: item['case_number'] in under_investigation, cases))
 
         print("Found {} new cases.".format(len(new_cases)))
         print("Found {} cases under investigation.".format(len(under_investigation)))
 
-        
         try:
             if len(new_cases) > 0:
                 print("Adding new cases to database.")
@@ -164,6 +170,4 @@ class Coronavirus():
 
 bot = Coronavirus()
 result = bot.get_data()
-
-if result['success']:
-    bot.send_mail(result['message'])
+bot.send_mail(result['message'])

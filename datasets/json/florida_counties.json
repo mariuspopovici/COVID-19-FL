@@ -1,0 +1,471 @@
+[{
+  "county": "Alachua",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3018,29.658
+    ]
+  }
+},{
+  "county": "Baker",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3018,30.3931
+    ]
+  }
+},{
+  "county": "Bay",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.6846,30.1805
+    ]
+  }
+},{
+  "county": "Bradford",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.1714,29.9724
+    ]
+  }
+},{
+  "county": "Brevard",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.7214,28.2639
+    ]
+  }
+},{
+  "county": "Broward",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.3659,26.1901
+    ]
+  }
+},{
+  "county": "Calhoun",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.1894,30.3475
+    ]
+  }
+},{
+  "county": "Charlotte",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.9098,26.8946
+    ]
+  }
+},{
+  "county": "Citrus",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.5186,28.8849
+    ]
+  }
+},{
+  "county": "Clay",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.7787,29.9944
+    ]
+  }
+},{
+  "county": "Collier",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.4279,26.0700
+    ]
+  }
+},{
+  "county": "Columbia",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.6051,30.1813
+    ]
+  }
+},{
+  "county": "DeSoto",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.7787,27.2142
+    ]
+  }
+},{
+  "county": "Dixie",
+  "location": {
+    "type": "Point",
+    "coordinates": [-83.1649,29.5207
+    ]
+  }
+},{
+  "county": "Duval",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.6035,30.3501
+    ]
+  }
+},{
+  "county": "Escambia",
+  "location": {
+    "type": "Point",
+    "coordinates": [-87.3414,30.6389
+    ]
+  }
+},{
+  "county": "Flagler",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.2519,29.4086
+    ]
+  }
+},{
+  "county": "Franklin",
+  "location": {
+    "type": "Point",
+    "coordinates": [-84.8568,29.7818
+    ]
+  }
+},{
+  "county": "Gadsden",
+  "location": {
+    "type": "Point",
+    "coordinates": [-84.6479,30.5563
+    ]
+  }
+},{
+  "county": "Gilchrist",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.8210,29.6871
+    ]
+  }
+},{
+  "county": "Glades",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.0755,26.9844
+    ]
+  }
+},{
+  "county": "Gulf",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.3550,29.8002
+    ]
+  }
+},{
+  "county": "Hamilton",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.9502,30.4756
+    ]
+  }
+},{
+  "county": "Hardee",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.8224,27.4502
+    ]
+  }
+},{
+  "county": "Hendry",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.0755,26.6105
+    ]
+  }
+},{
+  "county": "Hernando",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.4753,28.5579
+    ]
+  }
+},{
+  "county": "Highlands",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.3400,27.3400
+    ]
+  }
+},{
+  "county": "Hillsborough",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3018,27.9904
+    ]
+  }
+},{
+  "county": "Holmes",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.8077,30.8741
+    ]
+  }
+},{
+  "county": "IndianRiver",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.5438,27.6948
+    ]
+  }
+},{
+  "county": "Jackson",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.1894,30.7151
+    ]
+  }
+},{
+  "county": "Jefferson",
+  "location": {
+    "type": "Point",
+    "coordinates": [-83.8897,30.4312
+    ]
+  }
+},{
+  "county": "Lafayette",
+  "location": {
+    "type": "Point",
+    "coordinates": [-83.2078,30.0300
+    ]
+  }
+},{
+  "county": "Lake",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.7787,28.7028
+    ]
+  }
+},{
+  "county": "Lee",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.9535,26.6630
+    ]
+  }
+},{
+  "county": "Leon",
+  "location": {
+    "type": "Point",
+    "coordinates": [-84.1857,30.4906
+    ]
+  }
+},{
+  "county": "Levy",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.8210,29.3179
+    ]
+  }
+},{
+  "county": "Liberty",
+  "location": {
+    "type": "Point",
+    "coordinates": [-84.8568,30.1508
+    ]
+  }
+},{
+  "county": "Madison",
+  "location": {
+    "type": "Point",
+    "coordinates": [-83.5070,30.4586
+    ]
+  }
+},{
+  "county": "Manatee",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3452,27.4799
+    ]
+  }
+},{
+  "county": "Marion",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.1278,29.2788
+    ]
+  }
+},{
+  "county": "Martin",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.4104,27.0805
+    ]
+  }
+},{
+  "county": "Miami-Dade",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.6327,25.5516
+    ]
+  }
+},{
+  "county": "Monroe",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.7826,24.5557
+    ]
+  }
+},{
+  "county": "Nassau",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.8224,30.5927
+    ]
+  }
+},{
+  "county": "Okaloosa",
+  "location": {
+    "type": "Point",
+    "coordinates": [-86.6611,30.5773
+    ]
+  }
+},{
+  "county": "Okeechobee",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.8987,80.4104
+    ]
+  }
+},{
+  "county": "Orange",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.2519,28.4845
+    ]
+  }
+},{
+  "county": "Osceola",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.0755,28.1020
+    ]
+  }
+},{
+  "county": "Palm Beach",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.2767,26.6515
+    ]
+  }
+},{
+  "county": "Pasco",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.4319,28.3232
+    ]
+  }
+},{
+  "county": "Pinellas",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.7779,27.8764
+    ]
+  }
+},{
+  "county": "Polk",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.6912,27.8617
+    ]
+  }
+},{
+  "county": "Putnam",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.7787,29.6265
+    ]
+  }
+},{
+  "county": "SantaRosa",
+  "location": {
+    "type": "Point",
+    "coordinates": [-86.9824,30.7690
+    ]
+  }
+},{
+  "county": "Sarasota",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3452,27.1996
+    ]
+  }
+},{
+  "county": "Seminole",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.2078,28.7132
+    ]
+  }
+},{
+  "county": "St.Johns",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.4279,29.9719
+    ]
+  }
+},{
+  "county": "St.Lucie",
+  "location": {
+    "type": "Point",
+    "coordinates": [-80.5438,27.3226
+    ]
+  }
+},{
+  "county": "Sumter",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.0843,28.6748
+    ]
+  }
+},{
+  "county": "Suwannee",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.9932,30.2485
+    ]
+  }
+},{
+  "county": "Taylor",
+  "location": {
+    "type": "Point",
+    "coordinates": [-83.6774,30.0994
+    ]
+  }
+},{
+  "county": "Union",
+  "location": {
+    "type": "Point",
+    "coordinates": [-82.3452,30.0745
+    ]
+  }
+},{
+  "county": "Volusia",
+  "location": {
+    "type": "Point",
+    "coordinates": [-81.0755,29.0280
+    ]
+  }
+},{
+  "county": "Wakulla",
+  "location": {
+    "type": "Point",
+    "coordinates": [-84.3542,30.1302
+    ]
+  }
+},{
+  "county": "Walton",
+  "location": {
+    "type": "Point",
+    "coordinates": [-86.1752,30.5640
+    ]
+  }
+},{
+  "county": "Washington",
+  "location": {
+    "type": "Point",
+    "coordinates": [-85.6846,30.5487
+    ]
+  }
+}
+]
