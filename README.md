@@ -3,6 +3,8 @@ Pulls COVID-19 / Coronavirus case data from the Florida Department of Health and
 
 Check out a working dashboard [here](https://charts.mongodb.com/charts-project-0-gegka/public/dashboards/fbd7f26c-f393-4155-b8f1-6119e72ed843).
 
+Currently publishing embedded chart data at [https://www.covid19florida.info/](https://www.covid19florida.info/)
+
 ![Screenshot](images/screenshot.png "Screenshot")
 
 # Installation
