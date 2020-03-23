@@ -86,6 +86,7 @@ class CoronavirusStats():
         
         # rebuild simulation
         self.db.florida_growth.delete_many({"series": "actual"})
+        self.db.florida_growth_rates.delete_many({})
         if recalculate_sim:
             self.db.florida_growth.delete_many({"series": "predicted"})
 
