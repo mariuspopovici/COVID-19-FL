@@ -171,6 +171,6 @@ class Coronavirus():
         
 bot = Coronavirus()
 case_result = bot.get_case_data("./datasets/csv/cases.csv")
-hospitalized_result = bot.get_other_data("./datasets/csv/other_stats.csv")
+other_result = bot.get_other_data("./datasets/csv/other_stats.csv")
 
-#bot.send_mail(case_result['message'])
+bot.send_mail(case_result['message'])
