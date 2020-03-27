@@ -15,6 +15,7 @@
     "email_to": "<to_email_address>"
   },
   "api": {
-    "url": "https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Case_Line_Data/FeatureServer/0/query"
+    "url": "https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Case_Line_Data/FeatureServer/0/query",
+    "daily_url": "https://covidtracking.com/api/states/daily"
   }
 }

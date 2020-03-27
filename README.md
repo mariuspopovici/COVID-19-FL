@@ -65,6 +65,8 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
     "database": "<database_name>"
   },
   "other": {
+    "chromedriver_binary": "<path_to_chromedriver_binary>",
+    "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/",
     "dashboard_url": "<analytics_dasboard_url>"
   },
   "smtp": {
@@ -74,7 +76,8 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
     "email_to": "<to_email_address>"
   },
   "api": {
-    "url": "https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Case_Line_Data/FeatureServer/0/query"
+    "url": "https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Case_Line_Data/FeatureServer/0/query",
+    "daily_url": "https://covidtracking.com/api/states/daily"
   }
 }
 ```

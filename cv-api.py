@@ -31,7 +31,8 @@ class Coronavirus():
                     "email_to": environ.get("EMAIL_TO"),
                 },
                 "api": {
-                    "url": environ.get("API_URL")
+                    "url": environ.get("API_URL"),
+                    "daily_url": environ.get("DAILY_STATS_API_URL"),
                 }
             }
 
@@ -39,6 +40,7 @@ class Coronavirus():
         self.client = MongoClient(self.config["mongodb"]["url"])
         self.db = self.client.get_database(self.config["mongodb"]["database"])
         self.api_url = self.config["api"]["url"]
+        self.api_daily_url = self.config["api"]["daily_url"]
 
     # scrape source data from FLDOH
     def get_case_data(self):
@@ -114,21 +116,24 @@ class Coronavirus():
             "new_cases": store_result['new_records']
         }
     
-    def get_other_data(self, csv_file):
+    def get_other_data(self):
         try:
-            file = open(csv_file)
-            csv_reader = csv.reader(file, delimiter=',')
+            request_params = {
+                "state": "FL"                
+            }    
+
+            response = requests.get(self.api_daily_url, params=request_params)
+            data = response.json()
+
             # build a collection of records (dictionaries)
             row_num = 0
             stats = []
-            prev_tests = 0
-            for row in csv_reader:
+            for item in data:
                 record = {
-                    "date": datetime.strptime(row[0], '%m/%d/%y'),
-                    "tests": int(row[1]),
-                    "new_tests": int(row[1]) - prev_tests
+                    "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
+                    "tests": item["totalTestResults"],
+                    "new_tests": item["totalTestResultsIncrease"]
                 }
-                prev_tests = record["tests"]
                 stats.append(record)
 
             # store to database
@@ -208,7 +213,7 @@ class Coronavirus():
         
 bot = Coronavirus()
 case_result = bot.get_case_data()
-other_result = bot.get_other_data("./datasets/csv/other_stats.csv")
+other_result = bot.get_other_data()
 
 if case_result["new_cases"] > 0:
     bot.send_mail(case_result['message'])
