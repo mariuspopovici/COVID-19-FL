@@ -22,11 +22,6 @@ cd COVID-19-FL
 ```
 
 ## Prerequisites
-Download and install [Google Chrome](https://www.google.com/chrome/) if you don't have it installed already.
-You need Python3 installed on your machine. You also need the Python package management tool **pip** installed. This should come with Python3 and be installed by default.
-
-## ChromeDriver
-Download and install the latest stable release of [ChromeDriver](https://chromedriver.chromium.org/) for your platform.
 
 ## Virtualenv
 
@@ -47,9 +42,7 @@ Activate the virtual environment:
 
 ## Install Packages
 ```
-pip install selenium
-pip install dnspython
-pip install pymongo
+pip install -r example-requirements.txt
 ```
 
 ## Set Up MongoDB
@@ -68,12 +61,10 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
 ```
 {
   "mongodb": {
-    "url": "mongodb+srv://<your_mongodb_url>",
-    "database": "<your_database_name>"
+    "url": "mongodb+srv://<enter_your_mongodb_URL_here>",
+    "database": "<database_name>"
   },
   "other": {
-    "chromedriver_binary": "<path_to_chromedriver_binary>",
-    "data_url": "http://www.floridahealth.gov/diseases-and-conditions/COVID-19/",
     "dashboard_url": "<analytics_dasboard_url>"
   },
   "smtp": {
@@ -81,6 +72,9 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
     "password": "<your_email_password>",
     "email_from": "<from_email_address>",
     "email_to": "<to_email_address>"
+  },
+  "api": {
+    "url": "https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Case_Line_Data/FeatureServer/0/query"
   }
 }
 ```
@@ -90,5 +84,5 @@ Edit *sampleconfig.json* and save it as *config.json* in the project folder.
 Execute the following command to pull the latest data and store new cases in our MongoDB instance.
 
 ```
-python cv.py
+python cv-api.py
 ```
