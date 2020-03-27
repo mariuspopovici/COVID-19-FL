@@ -91,7 +91,7 @@ class CoronavirusStats():
             self.db.florida_growth.delete_many({"series": "predicted"})
 
         # get cumulated sums
-        current_growth = stats.cum_sum().to_dict()
+        current_growth = self.cum_sum().to_dict()
         data = []
         for date, count in current_growth.items():
             data.append({
