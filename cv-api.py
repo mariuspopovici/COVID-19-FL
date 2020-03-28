@@ -86,12 +86,12 @@ class Coronavirus():
                 case = {
                     "case_number": attributes["ObjectId"],
                     "county": attributes["County"],
-                    "age": attributes["Age"] if attributes["Age"] else 'Unknown',
+                    "age": int(attributes["Age"]) if attributes["Age"] != "NA" else None,
                     "sex": attributes["Gender"],
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
                     "contact_with_confirmed_case": attributes["Contact"] if attributes["Contact"] != "NA" else "No",
-                    "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0),
+                    "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0),
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
                     "hospitalized": attributes["Hospitalized"] if attributes["Hospitalized"] != "NA" else None,
@@ -101,10 +101,11 @@ class Coronavirus():
 
             # store to database
             store_result = self.store_data(cases, "florida")
-            self.client.close()
+            
 
         except Exception as e:
             print(str(e))
+            print(attributes)
             return {
                 "success": False,
                 "message": str(e)
@@ -138,7 +139,6 @@ class Coronavirus():
 
             # store to database
             store_result = self.store_data(stats, "other_stats")
-            self.client.close()
 
         except Exception as e:
             print(str(e))
