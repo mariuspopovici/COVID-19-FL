@@ -135,7 +135,7 @@ class CoronavirusStats():
         
 
 stats = CoronavirusStats()
-stats.push_stats(True)
+stats.push_stats()
 
 
 
