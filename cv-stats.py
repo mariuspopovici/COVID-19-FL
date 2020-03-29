@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 from os import path, environ
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta
 import json
 import pandas as pd
 
@@ -31,7 +31,8 @@ class CoronavirusStats():
         # connect to MongoDB/Atlas
         self.client = MongoClient(self.config["mongodb"]["url"])
         self.db = self.client.get_database(self.config["mongodb"]["database"])
-        self.data = self.read_mongo("florida")
+        today = datetime.today() - timedelta(days=1)
+        self.data = self.read_mongo("florida", {"date_added": {"$lt": today}})
 
     # Convert MongoDB cursor to Pandas dataframe
     def read_mongo(self, collection, query={}, no_id=True):
@@ -134,7 +135,7 @@ class CoronavirusStats():
         
 
 stats = CoronavirusStats()
-stats.push_stats()
+stats.push_stats(True)
 
 
 
