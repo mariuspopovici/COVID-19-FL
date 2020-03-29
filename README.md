@@ -104,8 +104,8 @@ python cv-api.py
 
 ## Credits
 
-The [Florida Health](https://floridahealthcovid19.gov/) for collecting detailed data and making it publicly available.
-The [Covid Tracking Project](https://covidtracking.com/) for providing the API for daily test counts.
+* [Florida Health](https://floridahealthcovid19.gov/) for collecting detailed data and making it publicly available.
+* The [Covid Tracking Project](https://covidtracking.com/) for providing the API for daily test counts.
 
 ## API
 
