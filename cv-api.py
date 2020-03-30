@@ -86,7 +86,7 @@ class Coronavirus():
                 case = {
                     "case_number": attributes["ObjectId"],
                     "county": attributes["County"],
-                    "age": int(attributes["Age"]) if attributes["Age"] != "NA" else None,
+                    "age": int(attributes["Age"]) if (attributes["Age"] != "NA" and attributes["Age"] != None) else None,
                     "sex": attributes["Gender"],
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
@@ -133,7 +133,9 @@ class Coronavirus():
                 record = {
                     "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
                     "tests": item["totalTestResults"],
-                    "new_tests": item["totalTestResultsIncrease"]
+                    "new_tests": item["totalTestResultsIncrease"],
+                    "deaths": item["death"],
+                    "new_deaths": item["deathIncrease"]
                 }
                 stats.append(record)
 
