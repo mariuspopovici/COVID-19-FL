@@ -128,14 +128,16 @@ class Coronavirus():
 
             # build a collection of records (dictionaries)
             row_num = 0
-            stats = []
+            stats = [] 
             for item in data:
+                prev_deaths = item["death"] - item["deathIncrease"] if (item["death"] != None and item["deathIncrease"] != None) else 0
                 record = {
                     "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
                     "tests": item["totalTestResults"],
                     "new_tests": item["totalTestResultsIncrease"],
                     "deaths": item["death"],
-                    "new_deaths": item["deathIncrease"]
+                    "new_deaths": item["deathIncrease"],
+                    "deaths_growth": (item["death"] / prev_deaths) if prev_deaths > 0 else 0
                 }
                 stats.append(record)
 
@@ -214,8 +216,8 @@ class Coronavirus():
         return locations_hash
         
 bot = Coronavirus()
-case_result = bot.get_case_data()
+#case_result = bot.get_case_data()
 other_result = bot.get_other_data()
 
-if case_result["new_cases"] > 0:
-    bot.send_mail(case_result['message'])
+#if case_result["new_cases"] > 0:
+#    bot.send_mail(case_result['message'])
