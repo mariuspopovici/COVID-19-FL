@@ -131,13 +131,17 @@ class Coronavirus():
             stats = [] 
             for item in data:
                 prev_deaths = item["death"] - item["deathIncrease"] if (item["death"] != None and item["deathIncrease"] != None) else 0
+                prev_hospitalized = item["hospitalized"] - item["hospitalizedIncrease"] if (item["hospitalized"] != None and item["hospitalizedIncrease"] != None) else 0
                 record = {
                     "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
                     "tests": item["totalTestResults"],
                     "new_tests": item["totalTestResultsIncrease"],
                     "deaths": item["death"],
                     "new_deaths": item["deathIncrease"],
-                    "deaths_growth": (item["death"] / prev_deaths) if prev_deaths > 0 else 0
+                    "deaths_growth": (item["death"] / prev_deaths) if prev_deaths > 0 else 0,
+                    "hospitalized": item["hospitalized"],
+                    "new_hospitalized": item["hospitalizedIncrease"],
+                    "hospitalized_growth": (item["hospitalized"] / prev_hospitalized) if prev_hospitalized > 0 else 0
                 }
                 stats.append(record)
 
