@@ -130,16 +130,16 @@ class Coronavirus():
             row_num = 0
             stats = [] 
             for item in data:
-                prev_deaths = item["death"] - item["deathIncrease"] if (item["death"] != None and item["deathIncrease"] != None) else 0
-                prev_hospitalized = item["hospitalized"] - item["hospitalizedIncrease"] if (item["hospitalized"] != None and item["hospitalizedIncrease"] != None) else 0
+                prev_deaths = item["death"] - item["deathIncrease"] if ("death" in item and item["death"] != None and item["deathIncrease"] != None) else 0
+                prev_hospitalized = item["hospitalized"] - item["hospitalizedIncrease"] if ("hospitalized" in item and item["hospitalized"] != None and "hospitalizedIncrease" in item and item["hospitalizedIncrease"] != None) else 0
                 record = {
                     "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
                     "tests": item["totalTestResults"],
                     "new_tests": item["totalTestResultsIncrease"],
-                    "deaths": item["death"],
+                    "deaths": item["death"] if "death" in item else 0,
                     "new_deaths": item["deathIncrease"],
                     "deaths_growth": (item["death"] / prev_deaths) if prev_deaths > 0 else 0,
-                    "hospitalized": item["hospitalized"],
+                    "hospitalized": item["hospitalized"] if "hospitalized" in item else 0,
                     "new_hospitalized": item["hospitalizedIncrease"],
                     "hospitalized_growth": (item["hospitalized"] / prev_hospitalized) if prev_hospitalized > 0 else 0
                 }
