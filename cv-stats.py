@@ -103,9 +103,9 @@ class CoronavirusStats():
 
         # simulate cumulated sums
         if recalculate_sim:
-            # get average growth rate for the last 10 days
-            average_growth_rate = self.cum_growth(10).mean()
-            # simulate 30 days of growth at current growth rate
+            # get average growth rate for the last 5 days
+            average_growth_rate = self.cum_growth(5).mean()
+            # simulate 14 days of growth at current growth rate
             simulated_growth = stats.growth_sim(14, average_growth_rate)
             for date, count in simulated_growth.items():
                 data.append({
