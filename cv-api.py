@@ -7,6 +7,7 @@ from datetime import datetime
 import smtplib
 import requests
 import math
+import time
 
 class Coronavirus():
     # constructor
@@ -71,11 +72,22 @@ class Coronavirus():
                     "f": "pjson",
                     "orderByFields": "Case_"
                 }    
+                print(f"Requesting page {page_no + 1} of {pages}")
                 response = requests.get(self.api_url, params=request_params)
                 offset = (page_no + 1) * records_per_page
                 data = response.json()
                 dataset = dataset + data["features"]
-            
+                
+                # wait loop
+                num_seconds = 10
+                print("Next call in: ")
+                for countdown in reversed(range(num_seconds + 1)):
+                    if countdown > 0:
+                        print(countdown, end='...')
+                        time.sleep(1)
+                    else:
+                        print('Done!')
+
             # build a collection of cases (dictionaries)
             row_num = 0
             cases = []
@@ -220,8 +232,8 @@ class Coronavirus():
         return locations_hash
         
 bot = Coronavirus()
-case_result = bot.get_case_data()
+#case_result = bot.get_case_data()
 other_result = bot.get_other_data()
 
-if case_result["new_cases"] > 0:
-    bot.send_mail(case_result['message'])
+#if case_result["new_cases"] > 0:
+#    bot.send_mail(case_result['message'])
