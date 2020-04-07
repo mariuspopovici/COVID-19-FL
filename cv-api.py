@@ -80,10 +80,10 @@ class Coronavirus():
                 
                 # wait loop
                 num_seconds = 10
-                print("Next call in: ")
+                print("Next call in: ", end = '')
                 for countdown in reversed(range(num_seconds + 1)):
                     if countdown > 0:
-                        print(countdown, end='...')
+                        print(countdown, end = ' ')
                         time.sleep(1)
                     else:
                         print('Done!')
