@@ -1,5 +1,6 @@
 [{
   "county": "Alachua",
+  "population": 249365,
   "location": {
     "type": "Point",
     "coordinates": [-82.3018,29.658
@@ -7,6 +8,7 @@
   }
 },{
   "county": "Baker",
+  "population": 27154,
   "location": {
     "type": "Point",
     "coordinates": [-82.3018,30.3931
@@ -14,6 +16,7 @@
   }
 },{
   "county": "Bay",
+  "population": 169856,
   "location": {
     "type": "Point",
     "coordinates": [-85.6846,30.1805
@@ -21,6 +24,7 @@
   }
 },{
   "county": "Bradford",
+  "population": 543566,
   "location": {
     "type": "Point",
     "coordinates": [-82.1714,29.9724
@@ -28,6 +32,7 @@
   }
 },{
   "county": "Brevard",
+  "population": 543566,
   "location": {
     "type": "Point",
     "coordinates": [-80.7214,28.2639
@@ -35,6 +40,7 @@
   }
 },{
   "county": "Broward",
+  "population": 1780172,
   "location": {
     "type": "Point",
     "coordinates": [-80.3659,26.1901
@@ -42,6 +48,7 @@
   }
 },{
   "county": "Calhoun",
+  "population": 14750,
   "location": {
     "type": "Point",
     "coordinates": [-85.1894,30.3475
@@ -49,6 +56,7 @@
   }
 },{
   "county": "Charlotte",
+  "population": 160511,
   "location": {
     "type": "Point",
     "coordinates": [-81.9098,26.8946
@@ -56,6 +64,7 @@
   }
 },{
   "county": "Citrus",
+  "population": 140031,
   "location": {
     "type": "Point",
     "coordinates": [-82.5186,28.8849
@@ -63,6 +72,7 @@
   }
 },{
   "county": "Clay",
+  "population": 192370,
   "location": {
     "type": "Point",
     "coordinates": [-81.7787,29.9944
@@ -70,6 +80,7 @@
   }
 },{
   "county": "Collier",
+  "population": 328134,
   "location": {
     "type": "Point",
     "coordinates": [-81.4279,26.0700
@@ -77,6 +88,7 @@
   }
 },{
   "county": "Columbia",
+  "population": 67485,
   "location": {
     "type": "Point",
     "coordinates": [-82.6051,30.1813
@@ -84,6 +96,7 @@
   }
 },{
   "county": "DeSoto",
+  "population": 34894,
   "location": {
     "type": "Point",
     "coordinates": [-81.7787,27.2142
@@ -91,6 +104,7 @@
   }
 },{
   "county": "Dixie",
+  "population": 16486,
   "location": {
     "type": "Point",
     "coordinates": [-83.1649,29.5207
@@ -98,6 +112,7 @@
   }
 },{
   "county": "Duval",
+  "population": 937934,
   "location": {
     "type": "Point",
     "coordinates": [-81.6035,30.3501
@@ -105,6 +120,7 @@
   }
 },{
   "county": "Escambia",
+  "population": 299114,
   "location": {
     "type": "Point",
     "coordinates": [-87.3414,30.6389
@@ -112,6 +128,7 @@
   }
 },{
   "county": "Flagler",
+  "population": 97376,
   "location": {
     "type": "Point",
     "coordinates": [-81.2519,29.4086
@@ -119,6 +136,7 @@
   }
 },{
   "county": "Franklin",
+  "population": 11596,
   "location": {
     "type": "Point",
     "coordinates": [-84.8568,29.7818
@@ -126,6 +144,7 @@
   }
 },{
   "county": "Gadsden",
+  "population": 46151,
   "location": {
     "type": "Point",
     "coordinates": [-84.6479,30.5563
@@ -133,6 +152,7 @@
   }
 },{
   "county": "Gilchrist",
+  "population": 17004,
   "location": {
     "type": "Point",
     "coordinates": [-82.8210,29.6871
@@ -140,6 +160,7 @@
   }
 },{
   "county": "Glades",
+  "population": 12635,
   "location": {
     "type": "Point",
     "coordinates": [-81.0755,26.9844
@@ -147,6 +168,7 @@
   }
 },{
   "county": "Gulf",
+  "population": 15844,
   "location": {
     "type": "Point",
     "coordinates": [-85.3550,29.8002
@@ -154,6 +176,7 @@
   }
 },{
   "county": "Hamilton",
+  "population": 14671,
   "location": {
     "type": "Point",
     "coordinates": [-82.9502,30.4756
@@ -161,6 +184,7 @@
   }
 },{
   "county": "Hardee",
+  "population": 27887,
   "location": {
     "type": "Point",
     "coordinates": [-81.8224,27.4502
@@ -168,6 +192,7 @@
   }
 },{
   "county": "Hendry",
+  "population": 39089,
   "location": {
     "type": "Point",
     "coordinates": [-81.0755,26.6105
@@ -175,6 +200,7 @@
   }
 },{
   "county": "Hernando",
+  "population": 173094,
   "location": {
     "type": "Point",
     "coordinates": [-82.4753,28.5579
@@ -182,6 +208,7 @@
   }
 },{
   "county": "Highlands",
+  "population": 98630,
   "location": {
     "type": "Point",
     "coordinates": [-81.3400,27.3400
@@ -189,6 +216,7 @@
   }
 },{
   "county": "Hillsborough",
+  "population": 1267775,
   "location": {
     "type": "Point",
     "coordinates": [-82.3018,27.9904
@@ -196,6 +224,7 @@
   }
 },{
   "county": "Holmes",
+  "population": 19873,
   "location": {
     "type": "Point",
     "coordinates": [-85.8077,30.8741
@@ -203,6 +232,7 @@
   }
 },{
   "county": "IndianRiver",
+  "population": 138894,
   "location": {
     "type": "Point",
     "coordinates": [-80.5438,27.6948
@@ -210,6 +240,7 @@
   }
 },{
   "county": "Jackson",
+  "population": 49292,
   "location": {
     "type": "Point",
     "coordinates": [-85.1894,30.7151
@@ -217,6 +248,7 @@
   }
 },{
   "county": "Jefferson",
+  "population": 14658,
   "location": {
     "type": "Point",
     "coordinates": [-83.8897,30.4312
@@ -224,6 +256,7 @@
   }
 },{
   "county": "Lafayette",
+  "population": 8942,
   "location": {
     "type": "Point",
     "coordinates": [-83.2078,30.0300
@@ -231,6 +264,7 @@
   }
 },{
   "county": "Lake",
+  "population": 301019,
   "location": {
     "type": "Point",
     "coordinates": [-81.7787,28.7028
@@ -238,6 +272,7 @@
   }
 },{
   "county": "Lee",
+  "population": 631330,
   "location": {
     "type": "Point",
     "coordinates": [-81.9535,26.6630
@@ -245,6 +280,7 @@
   }
 },{
   "county": "Leon",
+  "population": 277971,
   "location": {
     "type": "Point",
     "coordinates": [-84.1857,30.4906
@@ -252,6 +288,7 @@
   }
 },{
   "county": "Levy",
+  "population": 40156,
   "location": {
     "type": "Point",
     "coordinates": [-82.8210,29.3179
@@ -259,6 +296,7 @@
   }
 },{
   "county": "Liberty",
+  "population": 8314,
   "location": {
     "type": "Point",
     "coordinates": [-84.8568,30.1508
@@ -266,6 +304,7 @@
   }
 },{
   "county": "Madison",
+  "population": 19115,
   "location": {
     "type": "Point",
     "coordinates": [-83.5070,30.4586
@@ -273,6 +312,7 @@
   }
 },{
   "county": "Manatee",
+  "population": 327142,
   "location": {
     "type": "Point",
     "coordinates": [-82.3452,27.4799
@@ -280,6 +320,7 @@
   }
 },{
   "county": "Marion",
+  "population": 332529,
   "location": {
     "type": "Point",
     "coordinates": [-82.1278,29.2788
@@ -287,6 +328,7 @@
   }
 },{
   "county": "Martin",
+  "population": 147495,
   "location": {
     "type": "Point",
     "coordinates": [-80.4104,27.0805
@@ -294,6 +336,7 @@
   }
 },{
   "county": "Dade",
+  "population": 2662874,
   "location": { 
     "type": "Point",
     "coordinates": [-80.6327,25.5516
@@ -301,6 +344,7 @@
   }
 },{
   "county": "Monroe",
+  "population": 73873,
   "location": {
     "type": "Point",
     "coordinates": [-81.7826,24.5557
@@ -308,6 +352,7 @@
   }
 },{
   "county": "Nassau",
+  "population": 74195,
   "location": {
     "type": "Point",
     "coordinates": [-81.8224,30.5927
@@ -315,6 +360,7 @@
   }
 },{
   "county": "Okaloosa",
+  "population": 183482,
   "location": {
     "type": "Point",
     "coordinates": [-86.6611,30.5773
@@ -322,6 +368,7 @@
   }
 },{
   "county": "Okeechobee",
+  "population": 40140,
   "location": {
     "type": "Point",
     "coordinates": [-80.8987,27.3462
@@ -329,6 +376,7 @@
   }
 },{
   "county": "Orange",
+  "population": 1169107,
   "location": {
     "type": "Point",
     "coordinates": [-81.2519,28.4845
@@ -336,6 +384,7 @@
   }
 },{
   "county": "Osceola",
+  "population": 276163,
   "location": {
     "type": "Point",
     "coordinates": [-81.0755,28.1020
@@ -343,6 +392,7 @@
   }
 },{
   "county": "Palm Beach",
+  "population": 1335187,
   "location": {
     "type": "Point",
     "coordinates": [-80.2767,26.6515
@@ -350,6 +400,7 @@
   }
 },{
   "county": "Pasco",
+  "population": 466457,
   "location": {
     "type": "Point",
     "coordinates": [-82.4319,28.3232
@@ -357,6 +408,7 @@
   }
 },{
   "county": "Pinellas",
+  "population": 917398,
   "location": {
     "type": "Point",
     "coordinates": [-82.7779,27.8764
@@ -364,6 +416,7 @@
   }
 },{
   "county": "Polk",
+  "population": 609492,
   "location": {
     "type": "Point",
     "coordinates": [-81.6912,27.8617
@@ -371,6 +424,7 @@
   }
 },{
   "county": "Putnam",
+  "population": 74041,
   "location": {
     "type": "Point",
     "coordinates": [-81.7787,29.6265
@@ -378,6 +432,7 @@
   }
 },{
   "county": "SantaRosa",
+  "population": 154104,
   "location": {
     "type": "Point",
     "coordinates": [-86.9824,30.7690
@@ -385,6 +440,7 @@
   }
 },{
   "county": "Sarasota",
+  "population": 382213,
   "location": {
     "type": "Point",
     "coordinates": [-82.3452,27.1996
@@ -392,6 +448,7 @@
   }
 },{
   "county": "Seminole",
+  "population": 425071,
   "location": {
     "type": "Point",
     "coordinates": [-81.2078,28.7132
@@ -399,6 +456,7 @@
   }
 },{
   "county": "St.Johns",
+  "population": 195823,
   "location": {
     "type": "Point",
     "coordinates": [-81.4279,29.9719
@@ -406,6 +464,7 @@
   }
 },{
   "county": "St.Lucie",
+  "population": 280379,
   "location": {
     "type": "Point",
     "coordinates": [-80.5438,27.3226
@@ -413,6 +472,7 @@
   }
 },{
   "county": "Sumter",
+  "population": 97756,
   "location": {
     "type": "Point",
     "coordinates": [-82.0843,28.6748
@@ -420,6 +480,7 @@
   }
 },{
   "county": "Suwannee",
+  "population": 41972,
   "location": {
     "type": "Point",
     "coordinates": [-82.9932,30.2485
@@ -427,6 +488,7 @@
   }
 },{
   "county": "Taylor",
+  "population": 22691,
   "location": {
     "type": "Point",
     "coordinates": [-83.6774,30.0994
@@ -434,6 +496,7 @@
   }
 },{
   "county": "Union",
+  "population": 15388,
   "location": {
     "type": "Point",
     "coordinates": [-82.3452,30.0745
@@ -441,6 +504,7 @@
   }
 },{
   "county": "Volusia",
+  "population": 494804,
   "location": {
     "type": "Point",
     "coordinates": [-81.0755,29.0280
@@ -448,6 +512,7 @@
   }
 },{
   "county": "Wakulla",
+  "population": 30978,
   "location": {
     "type": "Point",
     "coordinates": [-84.3542,30.1302
@@ -455,6 +520,7 @@
   }
 },{
   "county": "Walton",
+  "population": 55793,
   "location": {
     "type": "Point",
     "coordinates": [-86.1752,30.5640
@@ -462,6 +528,7 @@
   }
 },{
   "county": "Washington",
+  "population": 24935,
   "location": {
     "type": "Point",
     "coordinates": [-85.6846,30.5487

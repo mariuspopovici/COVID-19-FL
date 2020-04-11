@@ -106,8 +106,8 @@ class Coronavirus():
                     "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0),
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
-                    "hospitalized": attributes["Hospitalized"] if attributes["Hospitalized"] != "NA" else None,
-                    "ed_visit": attributes["EDvisit"] if attributes["EDvisit"] != "NA" else None,
+                    "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
+                    "ed_visit": attributes["EDvisit"].title() if attributes["EDvisit"] != "NA" else None,
                 }
                 cases.append(case)
 
