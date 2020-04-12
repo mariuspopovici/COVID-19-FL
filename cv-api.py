@@ -65,7 +65,7 @@ class Coronavirus():
             for page_no in page_range:
                 request_params = {
                     "outFields": "Case_, ObjectId, County, Age, Gender, Travel_Related, Origin, EDVisit, Hospitalized, Died, Contact, EventDate",
-                    "where": "1>0",
+                    "where": "Case_ not like 'NA%'",
                     "returnCountOnly": "false",
                     "resultOffset": offset,
                     "resultRecordCount": records_per_page,
@@ -103,7 +103,7 @@ class Coronavirus():
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
                     "contact_with_confirmed_case": attributes["Contact"] if attributes["Contact"] != "NA" else "No",
-                    "date_added": datetime.fromtimestamp(attributes["EventDate"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0),
+                    "date_added": datetime.strptime(attributes["Case_"], "%m/%d/%Y %H:%M").replace(hour=0, minute=0, second=0, microsecond=0),
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
                     "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
