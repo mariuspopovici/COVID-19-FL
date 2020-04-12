@@ -79,7 +79,7 @@ class Coronavirus():
                 dataset = dataset + data["features"]
                 
                 # wait loop
-                num_seconds = 10
+                num_seconds = 5
                 print("Next call in: ", end = '')
                 for countdown in reversed(range(num_seconds + 1)):
                     if countdown > 0:
@@ -103,7 +103,7 @@ class Coronavirus():
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
                     "contact_with_confirmed_case": attributes["Contact"] if attributes["Contact"] != "NA" else "No",
-                    "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0),
+                    "date_added": datetime.fromtimestamp(attributes["EventDate"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0),
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
                     "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
