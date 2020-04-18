@@ -102,7 +102,7 @@ class Coronavirus():
                     "sex": attributes["Gender"],
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
-                    "contact_with_confirmed_case": attributes["Contact"] if attributes["Contact"] != "NA" else "No",
+                    "contact_with_confirmed_case": attributes["Contact"].title() if attributes["Contact"] != "NA" else "No",
                     "date_added": datetime.strptime(attributes["Case_"], "%m/%d/%Y %H:%M").replace(hour=0, minute=0, second=0, microsecond=0),
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
