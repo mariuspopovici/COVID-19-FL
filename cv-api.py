@@ -56,7 +56,7 @@ class Coronavirus():
             response = requests.get(self.api_url, params=request_params)
             data = response.json()
 
-            records_per_page = 1000
+            records_per_page = 2000
             pages = math.ceil(data["count"] / records_per_page)
             page_range = range(pages)
             offset = 0
@@ -103,7 +103,7 @@ class Coronavirus():
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
                     "contact_with_confirmed_case": attributes["Contact"].title() if attributes["Contact"] != "NA" else "No",
-                    "date_added": datetime.strptime(attributes["Case_"], "%m/%d/%Y %H:%M").replace(hour=0, minute=0, second=0, microsecond=0),
+                    "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0), 
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
                     "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
