@@ -55,6 +55,13 @@ class Coronavirus():
 
             response = requests.get(self.api_url, params=request_params)
             data = response.json()
+ 
+            if data["count"] == 0:
+                print("No data.")
+                return {
+                    "success": False,
+                    "message": "No data"
+                }
 
             records_per_page = 2000
             pages = math.ceil(data["count"] / records_per_page)
@@ -233,7 +240,8 @@ class Coronavirus():
         
 bot = Coronavirus()
 case_result = bot.get_case_data()
-other_result = bot.get_other_data()
 
-if case_result["new_cases"] > 0:
+if case_result["success"] and case_result["new_cases"] > 0:
+    other_result = bot.get_other_data()
     bot.send_mail(case_result['message'])
+
