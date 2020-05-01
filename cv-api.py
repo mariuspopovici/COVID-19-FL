@@ -144,11 +144,12 @@ class Coronavirus():
 
             response = requests.get(self.api_daily_url, params=request_params)
             data = response.json()
+            florida = list(filter(lambda item: item["state"] == "FL", iter(data)))
 
             # build a collection of records (dictionaries)
             row_num = 0
             stats = [] 
-            for item in data:
+            for item in florida:
                 prev_deaths = item["death"] - item["deathIncrease"] if ("death" in item and item["death"] != None and item["deathIncrease"] != None) else 0
                 prev_hospitalized = item["hospitalized"] - item["hospitalizedIncrease"] if ("hospitalized" in item and item["hospitalized"] != None and "hospitalizedIncrease" in item and item["hospitalizedIncrease"] != None) else 0
                 record = {
@@ -244,4 +245,3 @@ case_result = bot.get_case_data()
 if case_result["success"] and case_result["new_cases"] > 0:
     other_result = bot.get_other_data()
     bot.send_mail(case_result['message'])
-
