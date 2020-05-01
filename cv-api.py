@@ -153,7 +153,7 @@ class Coronavirus():
                 prev_hospitalized = item["hospitalized"] - item["hospitalizedIncrease"] if ("hospitalized" in item and item["hospitalized"] != None and "hospitalizedIncrease" in item and item["hospitalizedIncrease"] != None) else 0
                 record = {
                     "date": datetime.strptime(str(item["date"]), '%Y%m%d'),
-                    "tests": item["totalTestResults"],
+                    "tests": item["totalTestResults"] if "totalTestResults" in item else 0,
                     "new_tests": item["totalTestResultsIncrease"],
                     "deaths": item["death"] if "death" in item else 0,
                     "new_deaths": item["deathIncrease"],
