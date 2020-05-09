@@ -71,7 +71,7 @@ class Coronavirus():
             
             for page_no in page_range:
                 request_params = {
-                    "outFields": "Case_, ObjectId, County, Age, Gender, Travel_Related, Origin, EDVisit, Hospitalized, Died, Contact, EventDate",
+                    "outFields": "Case_, ObjectId, County, Age, Gender, Travel_Related, Origin, EDVisit, Hospitalized, Died, Contact",
                     "where": "Case_ not like 'NA%'",
                     "returnCountOnly": "false",
                     "resultOffset": offset,
