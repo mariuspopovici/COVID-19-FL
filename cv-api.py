@@ -71,13 +71,13 @@ class Coronavirus():
             
             for page_no in page_range:
                 request_params = {
-                    "outFields": "Case_, ObjectId, County, Age, Gender, Travel_Related, Origin, EDVisit, Hospitalized, Died, Contact",
+                    "outFields": "Case1, ObjectId, County, Age, Gender, Travel_Related, Origin, EDVisit, Hospitalized, Died, Contact",
                     "where": "Case_ not like 'NA%'",
                     "returnCountOnly": "false",
                     "resultOffset": offset,
                     "resultRecordCount": records_per_page,
                     "f": "pjson",
-                    "orderByFields": "Case_"
+                    "orderByFields": "Case1"
                 }    
                 print(f"Requesting page {page_no + 1} of {pages}")
                 response = requests.get(self.api_url, params=request_params)
@@ -110,7 +110,7 @@ class Coronavirus():
                     "travel": attributes["Travel_related"],
                     "travel_detail": travel_list,
                     "contact_with_confirmed_case": attributes["Contact"].title() if attributes["Contact"] != "NA" else "No",
-                    "date_added": datetime.fromtimestamp(attributes["Case_"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0), 
+                    "date_added": datetime.fromtimestamp(attributes["Case1"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0), 
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
                     "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
@@ -181,7 +181,7 @@ class Coronavirus():
         }
 
     # store records to Atlas/MongoDB instance
-    def store_data(self, records, collection):        
+    def store_data(self, records, collection):     
         current_count = self.db.get_collection(collection).estimated_document_count()
         new_records = len(records) - current_count
         # remove all records
