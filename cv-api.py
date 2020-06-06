@@ -63,6 +63,8 @@ class Coronavirus():
                     "message": "No data"
                 }
 
+            print ("Records found: " +  str(data["count"]))
+
             records_per_page = 2000
             pages = math.ceil(data["count"] / records_per_page)
             page_range = range(pages)
@@ -86,7 +88,7 @@ class Coronavirus():
                 dataset = dataset + data["features"]
                 
                 # wait loop
-                num_seconds = 5
+                num_seconds = 2
                 print("Next call in: ", end = '')
                 for countdown in reversed(range(num_seconds + 1)):
                     if countdown > 0:
@@ -101,7 +103,7 @@ class Coronavirus():
             for row in dataset:
                 attributes = row["attributes"]
                 travel_string = attributes["Origin"]
-                travel_list = [ item.strip().title() if len(item.strip()) > 2 else item.strip() for item in travel_string.split(";") ] if travel_string != "NA" else None
+                travel_list = [ item.strip().title() if ((item is not None) and len(item.strip()) > 2) else item.strip() for item in travel_string.split(";") ] if travel_string != "NA" else None
                 case = {
                     "case_number": attributes["ObjectId"],
                     "county": attributes["County"],
@@ -113,8 +115,8 @@ class Coronavirus():
                     "date_added": datetime.fromtimestamp(attributes["Case1"] / 1000.0).replace(hour=0, minute=0, second=0, microsecond=0), 
                     "deceased": attributes["Died"] if attributes["Died"] != "NA" else "No",
                     "location": locations.get(attributes["County"], None),
-                    "hospitalized": attributes["Hospitalized"].title() if attributes["Hospitalized"] != "NA" else None,
-                    "ed_visit": attributes["EDvisit"].title() if attributes["EDvisit"] != "NA" else None,
+                    "hospitalized": attributes["Hospitalized"].title() if (attributes["Hospitalized"] is not None and attributes["Hospitalized"] != "NA") else None,
+                    "ed_visit": attributes["EDvisit"].title() if ((attributes["EDvisit"] is not None) and attributes["EDvisit"] != "NA") else None,
                 }
                 cases.append(case)
 
