@@ -240,8 +240,8 @@ class Coronavirus():
         return locations_hash
         
 bot = Coronavirus()
-#case_result = bot.get_case_data()
+case_result = bot.get_case_data()
 
-#if case_result["success"] and case_result["new_cases"] > 0:
-other_result = bot.get_other_data()
-#    bot.send_mail(case_result['message'])
+if case_result["success"] and case_result["new_cases"] > 0:
+    other_result = bot.get_other_data()
+    bot.send_mail(case_result['message'])
